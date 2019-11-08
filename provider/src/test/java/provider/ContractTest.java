@@ -1,5 +1,8 @@
 package provider;
 
+
+//@PactBroker(host = "ota.pact.dius.com.au", authentication = @PactBrokerAuth(token = "HbtH0tZq7CU4d18JlKR2kA"))
+
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.loader.PactBroker;
@@ -15,7 +18,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 @RunWith(SpringRestPactRunner.class)
 @Provider("zip_provider")
 @PactFolder("src/test/pacts")
-//@PactBroker(host = "ota.pact.dius.com.au", authentication = @PactBrokerAuth(token = "HbtH0tZq7CU4d18JlKR2kA"))
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ContractTest {
 
@@ -29,11 +31,6 @@ public class ContractTest {
 
     @State("the zip code does not exist")
     public void theZipCodeDoesNotExist() {
-        // nothing to do, real service is used
-    }
-
-    @State("the zip code is not correctly formatted")
-    public void theZipCodeIsNotCorrectlyFormatted() {
         // nothing to do, real service is used
     }
 }
