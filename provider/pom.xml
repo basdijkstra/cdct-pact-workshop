@@ -18,6 +18,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
+    <pact.version>4.0.2</pact.version>
   </properties>
 
   <dependencies>
@@ -39,15 +40,12 @@
 
     <dependency>
       <groupId>au.com.dius</groupId>
-      <artifactId>pact-jvm-provider-spring_2.12</artifactId>
-      <version>3.5.24</version>
+      <artifactId>pact-jvm-provider-spring</artifactId>
+      <version>${pact.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
 
-  <profiles>
-    <profile>
-      <id>contract-tests</id>
       <build>
         <plugins>
           <plugin>
@@ -60,7 +58,4 @@
           </plugin>
         </plugins>
       </build>
-    </profile>
-  </profiles>
-
 </project>

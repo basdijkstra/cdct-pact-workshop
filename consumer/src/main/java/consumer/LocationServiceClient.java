@@ -11,7 +11,7 @@ public class LocationServiceClient {
 
     private final RestTemplate restTemplate;
 
-    public LocationServiceClient(@Value("${provider.base-url}") String baseUrl) {
+    public LocationServiceClient(@Value("${zip_provider.base-url}") String baseUrl) {
         this.restTemplate = new RestTemplateBuilder().rootUri(baseUrl).build();
     }
 

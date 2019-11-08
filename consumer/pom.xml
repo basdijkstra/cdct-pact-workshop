@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.ontestautomation.cdct</groupId>
@@ -19,6 +19,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <pact.version>3.5.24</pact.version>
+    <pact.maven.plugin.version>4.0.2</pact.maven.plugin.version>
   </properties>
 
 
@@ -51,19 +52,15 @@
     <plugins>
       <plugin>
         <groupId>au.com.dius</groupId>
-        <artifactId>pact-jvm-provider-maven_2.12</artifactId>
-        <version>${pact.version}</version>
+        <artifactId>pact-jvm-provider-maven</artifactId>
+        <version>${pact.maven.plugin.version}</version>
         <configuration>
-          <!-- pact_broker is the service zipCode in docker-compose -->
-          <pactBrokerUrl>http://pact_broker</pactBrokerUrl>
-          <projectVersion>${pact.consumer.version}</projectVersion>
-          <tags>
-            <tag>${pact.tag}</tag>
-          </tags>
+          <pactBrokerUrl>https://ota.pact.dius.com.au</pactBrokerUrl>
+          <pactBrokerToken>HbtH0tZq7CU4d18JlKR2kA</pactBrokerToken>
+          <pactBrokerAuthenticationScheme>Bearer</pactBrokerAuthenticationScheme>
         </configuration>
       </plugin>
     </plugins>
   </build>
-
 
 </project>
