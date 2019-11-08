@@ -122,21 +122,6 @@
                     "name": "the zip code exists"
                 }
             ]
-        },
-        {
-            "description": "A request for location data",
-            "request": {
-                "method": "GET",
-                "path": "/us/banana"
-            },
-            "response": {
-                "status": 400
-            },
-            "providerStates": [
-                {
-                    "name": "the zip code is not correctly formatted"
-                }
-            ]
         }
     ],
     "metadata": {
